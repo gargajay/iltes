@@ -36,6 +36,6 @@ if (! function_exists('publicPath')) {
     {
         
 
-        return  asset('backend');
+        return  asset('/public/backend');
     }
 }
