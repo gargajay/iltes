@@ -80,7 +80,7 @@ class RecordController extends Controller
     public function store(Request $request)
     {
         $rules =   [
-            'reading' => 'required',
+            'user_id' => 'required|unique:records,user_id',
 
         ];
 
