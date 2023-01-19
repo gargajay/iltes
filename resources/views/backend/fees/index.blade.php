@@ -23,7 +23,7 @@
                     <a class="view_all create" onclick="deleteAll()" ><i class="fa fa-trash "></i></a>
                     @endcan --}}
                 </div>
-                Total fee {{$totalfee}}
+                Total fee {{$totalfee}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                <a class="view_all create" href="{{url('backend/'.lcFirst($title)."/create?id=".$user_id)}}">+ Add New {{$title}}</a>
                <input class="custom_input search search_bar" type="text" placeholder="Type here..." name="name" value="{{$name}}">
              </div>   
