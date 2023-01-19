@@ -22,7 +22,7 @@
           href="https://cdn.jsdelivr.net/npm/metismenu/dist/metisMenu.min.css"
         />
 
-        <link id="skin-default" rel="stylesheet" href="{{asset('backend/assets/toaste/notification.css')}}">
+        <link id="skin-default" rel="stylesheet" href="{{asset('public/backend/assets/toaste/notification.css')}}">
 
 
       
