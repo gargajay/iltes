@@ -1,7 +1,6 @@
 <nav id="sidebar">
     <div class="sidebar-header">
-        <img src="{{publicPath()}}/assets/images/logo.png" alt="logo" class="img-responsive center-block" style="margin: 0 auto;
-        ">
+        <h4 style="color:#fff;">VisaPoint</h4>
     </div>
 
     <ul id="metismenu" class="list-unstyled components">
