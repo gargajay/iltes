@@ -15,9 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 // Route::get('/dashboard', function () {
 
@@ -40,6 +40,7 @@ Route::get('role/status/{id}/{status}', [RoleController::class, 'status']);
 
 Route::group(['middleware' => ['auth']], function()
 {
+    Route::get('/', [UserController::class, 'dashboard']);
 
     //Admin Dashboard
    
