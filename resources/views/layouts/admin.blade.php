@@ -118,7 +118,7 @@
               'bullist numlist checklist outdent indent | removeformat | a11ycheck code table help'
           });
         </script>
-         <script src="{{asset('backend/assets/toaste/notification.js')}}"></script>
+         <script src="{{asset('public/backend/assets/toaste/notification.js')}}"></script>
          <x-alert/>
 
         @yield('script')
