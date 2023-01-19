@@ -59,10 +59,11 @@ class FeeController extends Controller
             
         }
         
+        $totalfee = $items->sum('amount');
 
         $items =  $items->paginate(10);
 
-        return view('backend.fees.index',compact('items','name','user_id','user'));
+        return view('backend.fees.index',compact('items','name','user_id','user','totalfee'));
         
     }
     

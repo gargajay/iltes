@@ -11,7 +11,7 @@
     <div class="content_inner table_content">
         <div class="material_request_outer">
              <div class="main_title">
-                 {{$title}} List for {{$user->name}}
+                 {{$title}} List for {{$user->name}} Total fee {{$totalfee}}
              </div>
              <form action="" id="myform">
              <div class="add_new_product">
