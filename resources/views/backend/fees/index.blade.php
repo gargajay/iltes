@@ -11,7 +11,7 @@
     <div class="content_inner table_content">
         <div class="material_request_outer">
              <div class="main_title">
-                 {{$title}} List for {{$user->name}} Total fee {{$totalfee}}
+                 {{$title}} List for {{$user->name}} 
              </div>
              <form action="" id="myform">
              <div class="add_new_product">
@@ -23,6 +23,7 @@
                     <a class="view_all create" onclick="deleteAll()" ><i class="fa fa-trash "></i></a>
                     @endcan --}}
                 </div>
+                Total fee {{$totalfee}}
                <a class="view_all create" href="{{url('backend/'.lcFirst($title)."/create?id=".$user_id)}}">+ Add New {{$title}}</a>
                <input class="custom_input search search_bar" type="text" placeholder="Type here..." name="name" value="{{$name}}">
              </div>   
