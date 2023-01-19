@@ -19,9 +19,10 @@ class User extends Authenticatable
 
     const STATUS_STUDENT = 1;
 
-    const TYPE_IELTS = 1;
-    const TYPE_PTE = 2;
-    const TYPE_SPOKEN_ENGLISH = 3;
+    const TYPE_IELTS = 'Ielts';
+    const TYPE_PTE = 'PTE';
+    const TYPE_SPOKEN_ENGLISH = 'Spoken english';
+    const TYPE_VISA = 'Visa';
 
 
     /**
@@ -72,6 +73,7 @@ class User extends Authenticatable
             self::TYPE_IELTS=> "Ielts",
             self::TYPE_PTE=> "PTE",
             self::TYPE_SPOKEN_ENGLISH=> "Spoken english",
+            self::TYPE_VISA=> "Visa",
         );
         if ($id === null)
             return $list;
