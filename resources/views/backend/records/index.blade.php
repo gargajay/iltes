@@ -42,6 +42,7 @@
                     </th>
                     
                     <th>Student name</th>
+                    <th>Phone</th>
                     <th>Reading</th>
                     <th>Listening</th>
                     <th>Writing</th>
@@ -62,6 +63,7 @@
                                 <span class="checkmark"></span>
                               </label> </td>  
                             <td>{{$item->student ? $item->student->name:""}}</td>
+                            <td>{{$item->student ? $item->student->phone:""}}</td>
                             <td>{{$item->reading}}</td>
                             <td>{{$item->listening}}</td>
                             <td>{{$item->writing}}</td>
@@ -85,12 +87,13 @@
                                     <form method="POST" action="{{url('backend/'.lcFirst($title)."/".$item->id)}}">
                                         @csrf
                                         @method('delete')
-
+                                       
                                         @can(lcFirst($title)."-delete")
                                         <a  class="delete" ><i class="fa fa-trash text-danger"></i></a> |
                                         @endcan
                                         @can(lcFirst($title)."-edit")
                                         <a href="{{url('backend/'.lcFirst($title)."/".$item->id.'/edit')}}" class=" "><i class="fa fa-edit text-sucess"></i></a>
+
                                         @endcan
 
                                     </form>

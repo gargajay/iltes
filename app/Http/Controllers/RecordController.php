@@ -70,6 +70,17 @@ class RecordController extends Controller
     {
         return view('backend.records.create');
     }
+
+
+      /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    // public function show($id)
+    // {
+    //     return view('backend.record');
+    // }
     
     /**
      * Store a newly created resource in storage.
@@ -92,6 +103,12 @@ class RecordController extends Controller
                 $data = $request->all();
         
             try{
+                $student = User::find($request->user_id);
+
+                $student->status_id =7;
+
+                $student->save();
+
 
                 $user = Record::create($data);
 

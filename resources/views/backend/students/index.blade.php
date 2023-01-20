@@ -89,7 +89,7 @@
                                            
                                              @endcan
                                              @can("user-edit")
-                                             <a href="{{url('backend/fee?id='.$item->id)}}" class=" " title="View fee"><i class="fa fa-pencil text-sucess"></i></a>
+                                             <a href="{{url('backend/fee?id='.$item->id)}}" class=" " title="View fee"><i class="fa fa-eye text-sucess"></i></a>
                                                
                                                  @endcan
  
