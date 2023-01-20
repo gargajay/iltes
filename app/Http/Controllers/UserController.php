@@ -2,6 +2,7 @@
     
     namespace App\Http\Controllers;
     use App\Http\Controllers\Controller;
+use App\Models\Fee;
 use App\Models\Record;
 use App\Models\User;
     use Illuminate\Support\Facades\Auth;
@@ -33,15 +34,29 @@ class UserController extends Controller
 
 
     public function dashboard(){
-        $studentC = User::whereHas('roles', function($query) {
+        $student = User::whereHas('roles', function($query) {
             $query->where('name','Student');
-        })->where('status_id',1)->count();
+        })->where('status_id',1);
         $inquiryC = User::whereHas('roles', function($query) {
             $query->where('name','Student');
         })->where('status_id',0)->count();
 
+        $studentC= $student->count();
+
+        $items = User::whereHas('roles', function($query) {
+            $query->where('name','Student');
+        })->whereHas('fee', function($query) {
+            $query->where('due_date','!=',NULL);
+        })->where('status_id',1)->orderBy(
+            Fee::select('due_Date') 
+            ->whereColumn('fees.user_id','users.id')
+            ->take(1),'asc'
+          )->paginate(10);
+
         $recordC = Record::count();
-        return view('backend.dashboard',compact('studentC','inquiryC','recordC'));
+
+
+        return view('backend.dashboard',compact('studentC','inquiryC','recordC','items'));
 
     }
     
@@ -110,6 +125,7 @@ class UserController extends Controller
             $data = $request->all();
             $data['email'] = $request->name.rand()."@gmail.com";
             $data['password'] = Hash::make('12345678');
+            $data['status_id'] = 1;
 
                // dd($data);
 

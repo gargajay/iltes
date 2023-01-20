@@ -42,7 +42,7 @@
                     </th>
                     
                     <th>Name</th>
-                    <th>Father name</th>
+                    <th>Coruse</th>
                     <th>Phone</th>
                     <th>Date</th>
                     <th>Make student</th>
@@ -61,7 +61,7 @@
                                 <span class="checkmark"></span>
                               </label> </td>  
                             <td>{{$item->name}}</td>
-                            <td>{{$item->f_name}}</td>
+                            <td>{{$item->type_id}}</td>
                             <td>{{$item->phone}}</td>
                             <td>{{$item->created_at}}</td>
                             <td>  <div class="status_div">

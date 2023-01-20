@@ -19,7 +19,8 @@ class Fee extends Model
         'year',
         'amount',
         'user_id',
-        'status'
+        'status',
+        'due_date'
     
     ];
 
@@ -42,8 +43,16 @@ class Fee extends Model
         return isset($list[$id]) ? $list[$id] : 'Not Defined';
     }
 
-  
+    public function getCreatedAtAttribute($value)
+    {
+        $date=date_create($value);
+       return date_format($date,"d-m-Y");
+    }
 
+    public function user()
+    {
+      return   $this->belongsTo(User::class, 'user_id');
+    }
     // public function getLogoAttribute($value)
     // {
     //     if ($value != '') {

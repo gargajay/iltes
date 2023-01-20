@@ -46,6 +46,7 @@
                     <th>Year</th>
                     <th>Amount</th>
                     <th>Created Date</th>
+                    <th>Next month Due Date</th>
                     <th>Status</th>
 
                     <th>Action</th>
@@ -66,6 +67,7 @@
                             <td>{{$item->year}}</td>
                             <td>{{$item->amount}}</td>
                             <td>{{$item->created_at}}</td>
+                            <td>{{$item->due_date}}</td>
 
                             <td> 
                                 {{$item->getStatus($item->status)}}

@@ -30,6 +30,10 @@ $modelId = $model ? $model->id:"";
         <x-c-input type="textarea" name="descripion" value="{{$model ? $model->address:''}}" />
     </div> --}}
 
+    <div class="col-md-12">
+        <x-c-input name="due_date" type="date" label="Next due date"   value="{{$model ? $model->month:''}}" />
+
+    </div>
    
    
       

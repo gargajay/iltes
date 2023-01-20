@@ -40,7 +40,8 @@ class User extends Authenticatable
         'f_name',
         'address',
         'dob',
-        'parent_no'
+        'parent_no',
+        'status_id'
 
     ];
 
@@ -106,6 +107,11 @@ class User extends Authenticatable
     {
         $date=date_create($value);
        return date_format($date,"d-m-Y");
+    }
+
+    public  function fee()
+    {
+        return $this->hasOne(Fee::class,'user_id')->orderBy('month','asc')->latest();
     }
 
 
