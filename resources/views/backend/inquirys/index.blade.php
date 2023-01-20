@@ -45,6 +45,7 @@
                     <th>Coruse</th>
                     <th>Phone</th>
                     <th>Date</th>
+                    <th>Remarks</th>
                     <th>Make student</th>
                     <th>Action</th>
                 </tr>
@@ -64,6 +65,7 @@
                             <td>{{$item->type_id}}</td>
                             <td>{{$item->phone}}</td>
                             <td>{{$item->created_at}}</td>
+                            <td>{{$item->remarks}}</td>
                             <td>  <div class="status_div">
                                 <div class="toggle-switch">
                                 <input type="checkbox" @if(!auth()->user()->can(lcFirst($title)."-edit"))
