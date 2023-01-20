@@ -16,6 +16,8 @@ Route::group(['middleware' => ['auth'],'prefix' => 'backend'], function()
 
     //roles route
 
+    
+
     Route::resources([
         'role' => RoleController::class
     ],

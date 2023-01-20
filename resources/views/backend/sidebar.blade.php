@@ -10,20 +10,18 @@
             </a>
         </li>
        
-        {{-- @can("role-list")
-        <li class="{{ request()->is('backend/role*') ? 'active':""}}">
+        {{-- <li class="{{ request()->is('backend/role*') ? 'active':""}}">
             <a href="{{url('backend/role')}}"><i class="fas fa-list"></i>Roles
                 <div class="top"></div><div class="bottom"></div>
             </a>
         </li>
-        @endcan
-        @can("role-list")
+    
         <li class="{{ request()->is('backend/permission*') ? 'active':""}}">
             <a href="{{url('backend/permission')}}"><i class="fas fa-list"></i>permissions
                 <div class="top"></div><div class="bottom"></div>
             </a>
-        </li>
-        @endcan --}}
+        </li> --}}
+    
        
         @can("inquiry-list")
         <li class="{{request()->is('backend/inquiry*') ? 'active':""}}">
