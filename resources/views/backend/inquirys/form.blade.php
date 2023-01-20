@@ -26,8 +26,11 @@ $modelId = $model ? $model->id:"";
       <div class="col-md-6">
         <x-c-input name="type_id" type="select" :option="$v"   value="{{$model ? $model->type_id:''}}" />
     </div>
-    <div class="col-md-12">
+    <div class="col-md-6">
         <x-c-input type="textarea" name="address" value="{{$model ? $model->address:''}}" />
+    </div>
+    <div class="col-md-6">
+        <x-c-input type="textarea" name="remarks" value="{{$model ? $model->remarks:''}}" />
     </div>
 
    

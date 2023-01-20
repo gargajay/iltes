@@ -41,7 +41,8 @@ class User extends Authenticatable
         'address',
         'dob',
         'parent_no',
-        'status_id'
+        'status_id',
+        'remarks'
 
     ];
 

@@ -21,7 +21,8 @@ class Record extends Model
         'speaking',
         'overall',
         'status',
-        'user_id'
+        'user_id',
+        'remarks'
     
     ];
 

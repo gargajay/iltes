@@ -29,10 +29,12 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-6">
         <x-c-input name="overall"   value="{{$model ? $model->overall:''}}" />
     </div>
-   
+    <div class="col-md-6">
+        <x-c-input type="textarea" name="remarks" value="{{$model ? $model->remarks:''}}" />
+    </div>
 </div>
 
 
