@@ -15,7 +15,7 @@
             @forelse($option as $key2 => $value2)
                 <option value="{{$key2}}" @if($key2==$value)
                     selected
-                @endif>{{$key2}}-{{$value2}}</option>
+                @endif>{{$value2}}</option>
             @empty
                 
             @endforelse
