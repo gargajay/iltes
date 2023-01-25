@@ -81,9 +81,9 @@ class UserController extends Controller
         if(!empty($name)) 
         {
             $items =  $items->where(function ($query) use ($name) {
-                $query->where('name', 'Ilike', '%' . $name . '%')
-                      ->orWhere('created_at', 'Ilike', '%' . $name . '%')
-                      ->orWhere('type_id', 'Ilike', '%' . $name . '%');
+                $query->where('name', 'ilike', '%' . $name . '%')
+                      ->orWhere('created_at', 'ilike', '%' . $name . '%')
+                      ->orWhere('type_id', 'ilike', '%' . $name . '%');
             });
 
            
