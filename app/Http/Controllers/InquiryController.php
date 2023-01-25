@@ -49,9 +49,9 @@ class InquiryController extends Controller
         {
             
             $items =  $items->where(function ($query) use ($name) {
-                $query->where('name', 'ilike', '%' . $name . '%')
-                      ->orWhere('created_at', 'ilike', '%' . $name . '%')
-                      ->orWhere('type_id', 'ilike', '%' . $name . '%');
+                $query->where('name', 'like', '%' . $name . '%')
+                      ->orWhere('created_at', 'like', '%' . $name . '%')
+                      ->orWhere('type_id', 'like', '%' . $name . '%');
             });
             
         }
