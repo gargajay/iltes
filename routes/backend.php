@@ -16,6 +16,12 @@ Route::group(['middleware' => ['auth'],'prefix' => 'backend'], function()
 
     //roles route
 
+
+    
+
+    Route::get('/change-password', [UserController::class, 'changePassword']);
+
+
     
 
     Route::resources([

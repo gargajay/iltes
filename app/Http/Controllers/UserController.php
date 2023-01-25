@@ -311,4 +311,14 @@ class UserController extends Controller
             'model' => $model,
         ]);
     }
+
+    public function changePassword()
+    {
+        $model = Auth::user();
+
+        return view('backend.students.change-password',[
+            'model' => $model,
+        ]);
+
+    }
 }

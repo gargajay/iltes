@@ -21,6 +21,8 @@ $modelId = $model ? $model->id:"";
         <x-c-input type="date" name="dob" value="{{$model ? $model->dob:''}}" />
     </div>
 
+
+    @if($user->hasRole('Student'));
     <div class="col-md-6">
         <x-c-input name="parent_no" label="Parent phone no" value="{{$model ? $model->parent_no:''}}" />
     </div>
@@ -36,6 +38,7 @@ $modelId = $model ? $model->id:"";
     <div class="col-md-12">
         <x-c-input type="textarea" name="address" value="{{$model ? $model->address:''}}" />
     </div>
+    @endif
    
       
 </div>
