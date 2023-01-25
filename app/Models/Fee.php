@@ -49,6 +49,12 @@ class Fee extends Model
        return date_format($date,"d-m-Y");
     }
 
+    public function getDueDateAttribute($value)
+    {
+        $date=date_create($value);
+       return date_format($date,"d-m-Y");
+    }
+
     public function user()
     {
       return   $this->belongsTo(User::class, 'user_id');
