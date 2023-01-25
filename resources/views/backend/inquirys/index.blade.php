@@ -54,10 +54,10 @@
                     @php
                         $i=1;
                     @endphp
-                    @forelse ($items as $item)
+                    @forelse ($items as $key => $item)
                         
                         <tr>
-                            <td><label class="info_check">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ $i }}
+                            <td><label class="info_check">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{$items->firstItem() + $key }}
                                 <input class="name list checkId "  data-id="{{$item->id}}" name="All[]" type="checkbox" >
                                 <span class="checkmark"></span>
                               </label> </td>  

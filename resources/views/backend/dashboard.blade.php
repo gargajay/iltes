@@ -55,7 +55,7 @@
                 <thead>
                 <tr>
                   
-                    
+                    <th>No</th>
                     <th>Name</th>
                     <th>Father name</th>
                     <th>Phone</th>
@@ -68,10 +68,10 @@
                     @php
                         $i=1;
                     @endphp
-                    @forelse ($items as $item)
+                    @forelse ($items as $key => $item)
                         
                         <tr>
-                           
+                           <td>{{$items->firstItem() + $key }}</td>
                             <td>{{$item->name}}</td>
                             <td>{{$item->f_name}}</td>
                             <td>{{$item->phone}}</td>
