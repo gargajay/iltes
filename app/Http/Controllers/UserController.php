@@ -325,7 +325,13 @@ class UserController extends Controller
     public function updatePassword(Request $request)
     {
         $rules =   [
-            'password' => 'required',
+            'password' =>  [
+                'required', function ($attribute, $value, $fail) {
+                    if (!Hash::check($value, Auth::user()->password)) {
+                        $fail('Old Password didn\'t match');
+                    }
+                },
+            ],
             'new_password' => 'confirmed|different:password',
                 ];
 
