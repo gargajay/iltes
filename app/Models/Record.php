@@ -56,6 +56,12 @@ class Record extends Model
       return   $this->belongsTo(User::class, 'user_id');
     }
 
+    public function getCreatedAtAttribute($value)
+    {
+        $date=date_create($value);
+       return date_format($date,"d-m-Y");
+    }
+
   
 
     // public function getLogoAttribute($value)
