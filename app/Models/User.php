@@ -115,6 +115,10 @@ class User extends Authenticatable
         return $this->hasOne(Fee::class,'user_id')->orderBy('month','asc')->latest();
     }
 
+    public  function record()
+    {
+        return $this->hasOne(Record::class,'user_id')->orderBy('month','asc')->latest();
+    }
 
 
 
