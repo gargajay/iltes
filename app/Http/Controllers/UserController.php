@@ -43,10 +43,13 @@ class UserController extends Controller
 
         $studentC= $student->count();
 
+        $today = date("Y-m-d");
+
         $items = User::whereHas('roles', function($query) {
             $query->where('name','Student');
-        })->whereHas('fee', function($query) {
+        })->whereHas('fee', function($query) use ($today) {
             $query->where('due_date','!=',NULL);
+            $query->where('due_date','<=',$today);
         })->where('status_id',1)->orderBy(
             Fee::select('due_Date') 
             ->whereColumn('fees.user_id','users.id')
