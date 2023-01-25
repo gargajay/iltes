@@ -50,7 +50,7 @@ class RecordController extends Controller
             $items =  $items->where(function ($query) use ($name) {
                 $query->where('reading', 'like', '%' . $name . '%')
                       ->orWhere('created_at', 'like', '%' . $name . '%');
-            })->whereHas('student', function($query) use ($name) {
+            })->orWhereHas('student', function($query) use ($name) {
                 $query->where('name','like',$name);
             });
             
