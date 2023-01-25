@@ -49,7 +49,7 @@ class UserController extends Controller
             $query->where('name','Student');
         })->whereHas('fee', function($query) use ($today) {
             $query->where('due_date','!=',NULL);
-            $query->where('due_date','<=',$today);
+            $query->whereDate('due_date','<',$today);
         })->where('status_id',1)->orderBy(
             Fee::select('due_Date') 
             ->whereColumn('fees.user_id','users.id')
