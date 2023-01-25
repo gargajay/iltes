@@ -325,8 +325,8 @@ class UserController extends Controller
     public function updatePassword(Request $request)
     {
         $rules =   [
-            'old_password' => 'required',
-            'password' => 'confirmed|different:password',
+            'password' => 'required',
+            'new_password' => 'confirmed|different:password',
                 ];
 
         $validator = Validator::make($request->all(), $rules);
@@ -342,11 +342,10 @@ class UserController extends Controller
             try{
                 $data = $request->all();
                 $user = User::find(Auth::id());
-                $user->update($data);
 
               
                 if(!empty($request->password)){
-                    $user->password = Hash::make($request->password);
+                    $user->password = Hash::make($request->new_password);
                 }
              
                 $user->save();

@@ -15,10 +15,10 @@
 
        <div class="row">
             <div class="col-md-6">
-                <x-c-input name="old_password" type="password"  value="" />
+                <x-c-input name="password" type="password"  value="" />
             </div>
             <div class="col-md-6">
-                <x-c-input name="password" label="New password" type="password"  value="" />
+                <x-c-input name="new_password" label="New password" type="password"  value="" />
             </div>
           
        </div>
