@@ -22,7 +22,7 @@ $modelId = $model ? $model->id:"";
     </div>
 
 
-    @if($user->hasRole('Student'));
+    @if($model->hasRole('Student'));
     <div class="col-md-6">
         <x-c-input name="parent_no" label="Parent phone no" value="{{$model ? $model->parent_no:''}}" />
     </div>
