@@ -20,6 +20,7 @@ Route::group(['middleware' => ['auth'],'prefix' => 'backend'], function()
     
 
     Route::get('/change-password', [UserController::class, 'changePassword']);
+    Route::post('/change-password', [UserController::class, 'updatePassword']);
 
 
     

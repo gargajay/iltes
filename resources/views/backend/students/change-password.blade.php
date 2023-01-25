@@ -9,8 +9,7 @@
     <div class="content_inner">
         <div class="main_title">My Profile</div>
         <div class="sub_title">My Profile Information</div>
-    <form  method="POST"  action="{{url('backend/'.lcFirst($title).'/'.$model->id)}}" enctype="multipart/form-data">
-        @method('PUT')
+    <form  method="POST"  action="{{url('backend/change-password')}}" enctype="multipart/form-data">
 
        @csrf
 
@@ -19,11 +18,9 @@
                 <x-c-input name="old_password" type="password"  value="" />
             </div>
             <div class="col-md-6">
-                <x-c-input name="password" type="password"  value="" />
+                <x-c-input name="password" label="New password" type="password"  value="" />
             </div>
-            <div class="col-md-6">
-                <x-c-input name="password" type="password"  value="" />
-            </div>
+          
        </div>
       
        

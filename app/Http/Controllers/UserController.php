@@ -321,4 +321,45 @@ class UserController extends Controller
         ]);
 
     }
+
+    public function updatePassword(Request $request)
+    {
+        $rules =   [
+            'password' => 'required',
+            'old_password' => 'confirmed|different:password',
+                ];
+
+        $validator = Validator::make($request->all(), $rules);
+        
+        if ($validator->fails()) {
+
+            return Redirect::back()->withInput()->withErrors($validator);
+        }else{
+
+
+           // dd($request->all());
+
+            try{
+                $data = $request->all();
+                $user = User::find(Auth::id());
+                $user->update($data);
+
+              
+                if(!empty($request->password)){
+                    $user->password = Hash::make($request->password);
+                }
+             
+                $user->save();
+                return redirect()->back()->with('success','Password changed successfully');
+            }
+            catch(Exception $e){
+                return redirect()->back()
+                ->with('error',$e->getMessage());
+            }
+          
+
+        
+        }
+    }
+
 }
