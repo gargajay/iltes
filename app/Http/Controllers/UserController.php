@@ -332,7 +332,7 @@ class UserController extends Controller
                     }
                 },
             ],
-            'new_password' => 'confirmed|different:password',
+            'new_password' => 'confirmed',
                 ];
 
         $validator = Validator::make($request->all(), $rules);
