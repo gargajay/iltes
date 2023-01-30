@@ -108,8 +108,9 @@ Route::group(['middleware' => ['auth'],'prefix' => 'backend'], function()
     [
         'except' => ['show'],
     ]);
-    Route::post('fee/bulk-delete', [InquiryController::class, 'bulkDelete']);
-    Route::get('fee/status/{id}/{status}', [UserController::class, 'status']);
+    Route::post('fee/bulk-delete', [FeeController::class, 'bulkDelete']);
+    Route::get('fee/status/{id}/{status}', [FeeController::class, 'status']);
+    Route::get('fee-all', [FeeController::class, 'all']);
 
 
     
