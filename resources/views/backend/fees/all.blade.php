@@ -116,7 +116,7 @@
 
 
     jQuery(function($){ 
-        $(document).on('keyup', '.search_bar', function(e)
+        $(document).on('input', '.search_bar', function(e)
         {
             if(e.which == 13) 
             {
