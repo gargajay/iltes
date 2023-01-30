@@ -48,7 +48,7 @@ class UserController extends Controller
         $items = User::whereHas('roles', function($query) {
             $query->where('name','Student');
         })->with(['fee' => function ($q){
-
+            $q->orderBy('created_at','asc');
             $q->orderBy('due_date','desc');
 
         }])->whereHas('fee', function($query) use ($today) {
