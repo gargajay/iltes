@@ -30,6 +30,42 @@ class FeeController extends Controller
 
          
     }
+
+     /**
+     * Display a listing of all the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function all(Request $request)
+    {
+        $name = $request->query('name');
+
+        $user_id = $request->id ?? 0;
+
+
+        $user = User::find($user_id);
+        $items = Fee::with('user')->orderBy('id','DESC');
+
+
+        if(!empty($name)) 
+        {
+            
+            $items =  $items->where(function ($query) use ($name) {
+                $query->where('month', 'like', '%' . $name . '%')
+                      ->orWhere('created_at', 'like', '%' . $name . '%')
+                      ->orWhere('year', 'like', '%' . $name . '%')
+                      ->orWhere('amount', 'like', '%' . $name . '%');
+            });
+            
+        }
+        
+       // $totalfee = $items->sum('amount');
+
+        $items =  $items->paginate(10);
+
+        return view('backend.fees.all',compact('items'));
+        
+    }
     
     /**
      * Display a listing of the resource.

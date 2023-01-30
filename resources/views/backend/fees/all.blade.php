@@ -11,7 +11,7 @@
     <div class="content_inner table_content">
         <div class="material_request_outer">
              <div class="main_title">
-                 {{$title}} List for {{$user->name}} 
+                 {{$title}} List 
              </div>
              <form action="" id="myform">
              <div class="add_new_product">
@@ -23,8 +23,6 @@
                     <a class="view_all create" onclick="deleteAll()" ><i class="fa fa-trash "></i></a>
                     @endcan --}}
                 </div>
-                Total fee {{$totalfee}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-               <a class="view_all create" href="{{url('backend/'.lcFirst($title)."/create?id=".$user_id)}}">+ Add New {{$title}}</a>
                <input class="custom_input search search_bar" type="text" placeholder="Type here..." name="name" value="{{$name}}">
              </div>   
             </form> 
@@ -36,12 +34,11 @@
                     <th>
                         <label class="info_check"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             S.no
-                            <input type="checkbox" id="checkall"  onclick="toggle(this);">
-                            <span class="checkmark"></span>
+                            
                           </label>
                        
                     </th>
-                    
+                    <th>Student name</th>
                     <th>Month</th>
                     <th>Year</th>
                     <th>Amount</th>
@@ -60,9 +57,10 @@
                         
                         <tr>
                             <td><label class="info_check">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{$items->firstItem() + $key }}
-                                <input class="name list checkId "  data-id="{{$item->id}}" name="All[]" type="checkbox" >
-                                <span class="checkmark"></span>
-                              </label> </td>  
+                              
+                              </label> </td>
+                              <td>{{$item->user->name}}</td>
+  
                             <td>{{$item->month}}</td>
                             <td>{{$item->year}}</td>
                             <td>{{$item->amount}}</td>
