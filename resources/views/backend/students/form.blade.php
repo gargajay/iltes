@@ -23,7 +23,7 @@ $auth = Auth::user();
     </div>
 
 
-    @if(!$auth->hasRole('Admin'))
+    @if(!$auth->hasRole('Super-Admin'))
     <div class="col-md-6">
         <x-c-input name="parent_no" label="Parent phone no" value="{{$model ? $model->parent_no:''}}" />
     </div>
