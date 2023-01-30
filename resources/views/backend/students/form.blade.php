@@ -2,6 +2,7 @@
 use Spatie\Permission\Models\Role;
 $roles = Role::pluck('name', 'name')->all();
 $modelId = $model ? $model->id:"";
+$auth = Auth::user();
 ?>
 <div class="row">
     <div class="col-md-6">
@@ -22,7 +23,7 @@ $modelId = $model ? $model->id:"";
     </div>
 
 
-    @if($model->hasRole('Student'))
+    @if(!$auth->hasRole('Admin'))
     <div class="col-md-6">
         <x-c-input name="parent_no" label="Parent phone no" value="{{$model ? $model->parent_no:''}}" />
     </div>
