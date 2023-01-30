@@ -46,7 +46,6 @@
                     <th>Next month Due Date</th>
                     <th>Status</th>
 
-                    <th>Action</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -82,24 +81,7 @@
                                     </div>
                                 </div>
                             </td> --}}
-                            <td>
-                               
-                                    <form method="POST" action="{{url('backend/'.lcFirst($title)."/".$item->id."?user_id=".$user_id)}}">
-                                        @csrf
-                                        @method('delete')
-                                        
-                                            @can(lcFirst($title)."-delete")
-                                            <a  class="delete" ><i class="fa fa-trash text-danger"></i></a> |
-                                            @endcan
-                                            @can(lcFirst($title)."-edit")
-                                        <a href="{{url('backend/'.lcFirst($title)."/".$item->id.'/edit?user_id='.$user_id)}}" class=" "><i class="fa fa-edit text-sucess"></i></a>
-                                          
-                                            @endcan
-
-                                    </form>
-                                
-                                
-                            </td>
+                           
                         </tr>
                         @php
                             $i++;

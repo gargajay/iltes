@@ -63,7 +63,7 @@ class FeeController extends Controller
 
         $items =  $items->paginate(10);
 
-        return view('backend.fees.all',compact('items'));
+        return view('backend.fees.all',compact('items','name'));
         
     }
     
