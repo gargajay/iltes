@@ -52,7 +52,7 @@ class UserController extends Controller
             $query->whereDate('due_date','>=',$today);
         })->with(['fee' => function ($q){
 
-            $q->orderBy('due_date','asc');
+            $q->orderBy('due_date','desc');
 
         }])->paginate(10);
 
