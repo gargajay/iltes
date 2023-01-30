@@ -120,9 +120,7 @@
         {
             if(e.which == 13) 
             {
-                var name =  $(".search_bar").val();
-                var furl = uri+"?id="+uId+"&name="+name;
-                return window.location.href =   furl;
+                $(this).closest('form').submit();
 
                
           
@@ -132,17 +130,13 @@
         $(document).on('blur', '.search_bar', function()
         {
             
-            var name =  $(".search_bar").val();
-                var furl = uri+"?id="+uId+"&name="+name;
-                return window.location.href =   furl;
+            $(this).closest('form').submit();
 
           
         });
     
         $(document).on('change', '.search_bar_dropdown', function(e){
-            var name =  $(".search_bar").val();
-                var furl = uri+"?id="+uId+"&name="+name;
-                return window.location.href =   furl;
+            $(this).closest('form').submit();
 
            
          });
