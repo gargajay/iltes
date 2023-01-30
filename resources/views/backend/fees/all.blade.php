@@ -24,6 +24,7 @@
                     @endcan --}}
                 </div>
                <input class="custom_input search search_bar" type="text" placeholder="Type here..." name="name" value="{{$name}}">
+               <input class="custom_input search search_bar" type="date" placeholder="Type here..." name="date" value="{{$date}}">
              </div>   
             </form> 
         </div>

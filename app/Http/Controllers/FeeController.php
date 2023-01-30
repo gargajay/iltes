@@ -39,6 +39,7 @@ class FeeController extends Controller
     public function all(Request $request)
     {
         $name = $request->query('name');
+        $date = $request->query('date');
 
         $user_id = $request->id ?? 0;
 
@@ -60,12 +61,23 @@ class FeeController extends Controller
             });
             
         }
+
+        if(!empty($date)) 
+        {
+            
+            $items =  $items->where(function ($query) use ($date) {
+                $query
+                      ->whereDate('created_at',$date);
+
+            });
+            
+        }
         
        // $totalfee = $items->sum('amount');
 
         $items =  $items->paginate(10);
 
-        return view('backend.fees.all',compact('items','name'));
+        return view('backend.fees.all',compact('items','name','date'));
         
     }
     
