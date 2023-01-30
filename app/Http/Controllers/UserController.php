@@ -47,14 +47,14 @@ class UserController extends Controller
 
         $items = User::whereHas('roles', function($query) {
             $query->where('name','Student');
-        })->whereHas('fee', function($query) use ($today) {
-            // $query->where('due_date','!=',NULL);
-            $query->whereDate('due_date','>=',$today);
         })->with(['fee' => function ($q){
 
             $q->orderBy('due_date','desc');
 
-        }])->paginate(10);
+        }])->whereHas('fee', function($query) use ($today) {
+            // $query->where('due_date','!=',NULL);
+            $query->whereDate('due_date','>=',$today);
+        })->paginate(10);
 
 
       
