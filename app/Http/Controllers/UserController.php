@@ -50,11 +50,14 @@ class UserController extends Controller
         })->whereHas('fee', function($query) use ($today) {
             // $query->where('due_date','!=',NULL);
             $query->whereDate('due_date','>=',$today);
-        })->where('status_id',1)->orderBy(
-            Fee::select('due_Date') 
-            ->whereColumn('fees.user_id','users.id')
-            ->take(1),'asc'
-          )->paginate(10);
+        })->with(['fee' => function ($q){
+
+            $q->orderBy('due_date','asc');
+
+        }])->paginate(10);
+
+
+      
 
         $recordC = Record::count();
 
