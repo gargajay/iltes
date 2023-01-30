@@ -23,7 +23,7 @@
                     <a class="view_all create" onclick="deleteAll()" ><i class="fa fa-trash "></i></a>
                     @endcan --}}
                 </div>
-               <input class="custom_input search search_bar" type="text" placeholder="Type here..." name="name" value="{{$name}}">
+               <input class="custom_input search search_bar" type="search" placeholder="Type here..." name="name" value="{{$name}}">
                <input class="custom_input  search_bar" type="date" placeholder="Type here..." name="date" value="{{$date}}">
              </div>   
             </form> 
