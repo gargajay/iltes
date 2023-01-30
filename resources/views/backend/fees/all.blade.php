@@ -110,7 +110,7 @@
 
 @section('script')
 <script>
-    var uri = "{{ url('backend/'.$title2) }}";
+    var uri = "{{ url('backend/fee-all') }}";
     var uId = 0;
 
 
