@@ -111,7 +111,7 @@
 @section('script')
 <script>
     var uri = "{{ url('backend/'.$title2) }}";
-    var uId = "{{$user_id}}";
+    var uId = 0;
 
 
     jQuery(function($){ 
