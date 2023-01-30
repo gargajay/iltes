@@ -55,6 +55,8 @@ class FeeController extends Controller
                       ->orWhere('created_at', 'like', '%' . $name . '%')
                       ->orWhere('year', 'like', '%' . $name . '%')
                       ->orWhere('amount', 'like', '%' . $name . '%');
+            })->orWhereHas('user', function($query) use ($name) {
+                $query->where('name', 'like', '%' . $name . '%');
             });
             
         }
