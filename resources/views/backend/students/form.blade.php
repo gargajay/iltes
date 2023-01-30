@@ -22,8 +22,10 @@ $auth = Auth::user();
         <x-c-input type="date" name="dob" value="{{$model ? $model->dob:''}}" />
     </div>
 
-
-    @if(Auth::user()->getRole()!='Super-Admin' || Auth::user()->getRole()!='Staff')
+ @php
+    $model_id = $model ? $model->id:0;
+ @endphp
+    @if(Auth::user()->id!=$model_id);
     <div class="col-md-6">
         <x-c-input name="parent_no" label="Parent phone no" value="{{$model ? $model->parent_no:''}}" />
     </div>
