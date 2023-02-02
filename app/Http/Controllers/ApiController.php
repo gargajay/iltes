@@ -2,6 +2,7 @@
     
     namespace App\Http\Controllers;
     use App\Http\Controllers\Controller;
+use App\Models\User;
 use Carbon\Carbon;
 use Carbon\CarbonInterface;
 use Illuminate\Support\Facades\Auth;
@@ -11,7 +12,8 @@ use Illuminate\Support\Facades\Auth;
     use DB;
     use Exception;
     use Facade\FlareClient\Http\Response;
-    use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\View;
 
 class ApiController extends Controller
 {
@@ -31,6 +33,35 @@ class ApiController extends Controller
         echo $diff = $emitted->diffForHumans(now()->addHour()); 
     }
     
+    public function contactForm(Request $request)
+    {
+        $data = $request->all();
+        $data['email'] = $request->name.rand()."@gmail.com";
+        $data['password'] = Hash::make('12345678');
+
+       // dd($data);
+
+    try{
+       
+
+        
+
+        $user = User::create($data);
+
+       
+        $user->assignRole('Student');
+        
+        return response()->json('success', 200);        
+
+      
+    }
+    catch(Exception $e){
+        return response()->json($e->getMessage(), 400);        
+    }
+    }
+
+
+
     /**
      * Display a listing of the resource.
      *

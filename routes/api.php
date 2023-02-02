@@ -23,6 +23,7 @@ Route::group(['middleware' => ['XSS']], function () {
 
 
 Route::get('webhock', [ApiController::class, 'webhock']);
+Route::get('contact-form', [ApiController::class, 'contactForm']);
 
 
 

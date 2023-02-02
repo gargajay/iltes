@@ -10,7 +10,7 @@
             </a>
         </li>
        
-         <li class="{{ request()->is('backend/role*') ? 'active':""}}">
+         {{-- <li class="{{ request()->is('backend/role*') ? 'active':""}}">
             <a href="{{url('backend/role')}}"><i class="fas fa-list"></i>Roles
                 <div class="top"></div><div class="bottom"></div>
             </a>
@@ -20,7 +20,7 @@
             <a href="{{url('backend/permission')}}"><i class="fas fa-list"></i>permissions
                 <div class="top"></div><div class="bottom"></div>
             </a>
-        </li> 
+        </li>  --}}
     
        
         @can("inquiry-list")
