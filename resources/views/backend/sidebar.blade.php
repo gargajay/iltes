@@ -2,6 +2,7 @@
     <div class="sidebar-header text-center">
         <h4 style="color:#fff;">Cloudsky</h4>
     </div>
+    
 
     <ul id="metismenu" class="list-unstyled components">
         <li class="{{request()->is('dashboard') ? 'active':""}} ">
