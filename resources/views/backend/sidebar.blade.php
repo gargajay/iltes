@@ -1,12 +1,13 @@
 <nav id="sidebar">
     <div class="sidebar-header text-center">
         <h4 style="color:#fff">Cloudsky</h4>
+        
     </div>
 
 
     <ul id="metismenu" class="list-unstyled components">
         <li class="{{request()->is('dashboard') ? 'active':""}} ">
-            <a href="{{url('/dashboard')}}"><i class="fas fa-house"></i>Dashboard1
+            <a href="{{url('/dashboard')}}"><i class="fas fa-house"></i>Dashboard
                  <div class="top"></div><div class="bottom"></div>
             </a>
         </li>
