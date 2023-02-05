@@ -1,8 +1,8 @@
 <nav id="sidebar">
     <div class="sidebar-header text-center">
-        <h4 style="color:#fff;">Cloudsky</h4>
+        <h4 style="color:rgb(155, 12, 12);">Cloudsky</h4>
     </div>
-    
+
 
     <ul id="metismenu" class="list-unstyled components">
         <li class="{{request()->is('dashboard') ? 'active':""}} ">
