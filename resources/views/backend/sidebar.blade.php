@@ -1,6 +1,6 @@
 <nav id="sidebar">
     <div class="sidebar-header text-center">
-        <h4 style="color:#fff;">Visa Point</h4>
+        <h4 style="color:#fff;">Cloudsky</h4>
     </div>
 
     <ul id="metismenu" class="list-unstyled components">
