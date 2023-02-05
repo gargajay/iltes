@@ -6,7 +6,7 @@
 
     <ul id="metismenu" class="list-unstyled components">
         <li class="{{request()->is('dashboard') ? 'active':""}} ">
-            <a href="{{url('/dashboard')}}"><i class="fas fa-house"></i>Dashboard
+            <a href="{{url('/dashboard')}}"><i class="fas fa-house"></i>Dashboard1
                  <div class="top"></div><div class="bottom"></div>
             </a>
         </li>
